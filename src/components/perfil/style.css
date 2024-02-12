@@ -1,0 +1,66 @@
+.containerDado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.containerDado img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#nome {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.containerPerfil{
+    margin: 0 10px;
+}
+
+.containerPerfil .titulo2 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #333;
+}
+
+.listaCertificacoes{
+    margin-left: 20px;
+    list-style: none;
+    
+}
+
+#galeriaPortfolio{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#galeriaPortfolio img{
+    width: 60vw;
+    margin: 5px auto;
+}
+
+#avaliacoes p {
+    margin-bottom: 10px;
+    
+}
+
+.contato{
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#emailPiloto, #telefonePiloto {
+    font-weight: bold;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #galeriaPortfolio img{
+        width: 35vw;
+        margin: 5px auto;
+    }
+}

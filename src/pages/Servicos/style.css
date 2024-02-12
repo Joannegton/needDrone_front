@@ -1,0 +1,31 @@
+
+  
+.containerCadastro {
+max-width: 450px;
+display: flex;
+flex-direction: column;    
+background-color: #1d9ca328; /* Adicione uma cor de fundo, se necessário */
+border: 1px solid #ddd; 
+margin: 30px auto;
+}
+
+.containerCadastro p{
+    text-align: center;
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.radio input{
+  width: 20px; /* Tamanho do círculo simulado */
+  margin: 10px;
+}
+
+.radio div label{
+   font-size: 1.1em;
+   font-weight: bold;
+   color: #333;
+}

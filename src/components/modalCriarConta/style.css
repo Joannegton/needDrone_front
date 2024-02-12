@@ -1,0 +1,12 @@
+
+  .link{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(57, 1, 65);
+}

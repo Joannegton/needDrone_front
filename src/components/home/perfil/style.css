@@ -1,0 +1,42 @@
+.container_perfil{
+    margin-bottom:20px;
+}
+.card_edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.164);
+}
+
+.links{
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8em;
+}
+
+.card_perfil img{
+    margin: 7px 10px 7px 7px;
+}
+.card_perfil{
+    display: flex;
+    align-items: center;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+}
+
+.perc_preenc{
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .container_perfil{
+        width: 450px;
+    }
+}

@@ -1,0 +1,227 @@
+
+form{
+    margin: 10px auto;
+    text-align: center;
+    width: 80%;
+    padding: 10px 0;
+    background-color: rgba(179, 219, 253, 0.329);
+    border-radius: 5px;
+}
+
+
+.containerData{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto 15px; 
+      
+}
+
+input, select{
+    margin: 5px 0;
+    background-color: rgba(66, 66, 66, 0.144);
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    height: 1.5em;
+    border-radius: 5px;
+}
+
+textarea{
+    margin: 5px 0;
+    background-color: rgba(66, 66, 66, 0.144);
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    height: 150px;
+    border-radius: 5px;
+}
+
+label{
+    text-align: left;
+    font-size: .9em;
+}
+
+.Container_tel{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.whatsapp{
+    margin: 0 5px;
+}
+form button{
+    width: 100px;
+    height: 28px;
+    margin: 8px auto;
+    cursor: pointer;
+    background-color: #1d9ca3ab;
+    font-weight: 600;
+    font-size: 1.1em;
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    border-radius: 5px;
+}
+
+.userType{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin: auto;
+}
+
+.userType label{
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.userType label input{
+    margin-right: 3px;
+}
+
+.container_esqueci{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    margin: 0;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(57, 1, 65);
+}
+
+.container_form{
+    width: 70vw;
+    background-color: #1d9ca321;
+    border-radius: 5px;
+    margin: 40px auto ;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form form{
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+.select{
+    width: 120px;
+}
+.containerSobrepDate{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 10px;
+}
+.containerSobrepDate aside{
+    display: flex;
+    flex-direction: column;
+}
+.containerSobrepDate .sobreposicaoimg{
+    display: flex;
+    align-items: center;
+}
+.containerSobrepDate .sobreposicaoimg input{
+    margin-left: 10px;
+}
+/*cadastro drone*/
+.selects{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+}
+
+.containerSelect{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.containerSelect select, .sobreposicaoimg input{
+    margin-left: 5px;
+}
+
+.sobreposicaoimg{
+    display: flex;
+    align-items: center;
+}
+
+#budget{
+    width: 100px;
+}
+
+/*Proposta*/
+.oferta div, .detProposta{
+    display: flex;
+    flex-direction: column;
+
+}
+.oferta div{
+    align-items: center;
+}
+.oferta div input{
+    width: 100px;
+    height: 30px;
+    font-size: 1.1em;
+}
+
+.oferta{
+    display: flex;
+    justify-content: space-around;
+}
+
+  
+  /* Estilo padrão do card (label) */
+  .drones label {
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Quando o rádio está selecionado, altera a borda do label */
+  input[type="radio"]:checked + label {
+    border-color: blue; /* Mude a cor conforme necessário */
+    border-width: 2px;
+  }
+  
+
+/* Adicione a cor amarela para estrelas selecionadas */
+.selected {
+    color: rebeccapurple;
+  }
+  
+  /* Adicione cor amarela a todas as estrelas até a selecionada */
+  .estrelas-container {
+    display: flex;
+  }
+  
+  .estrela-container-1 .estrela,
+  .estrela-container-2 .estrela,
+  .estrela-container-3 .estrela,
+  .estrela-container-4 .estrela,
+  .estrela-container-5 .estrela {
+    color: black;
+  }
+
+@media only screen and (min-width: 768px) {
+    form{
+        width: 80%;
+    }
+
+    .selects{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 70px;
+     
+    }
+}
+
+
+@media only screen and (min-width: 950px) {
+    form{
+        width: 600px;
+    }
+}

@@ -1,0 +1,140 @@
+header{
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--principal);
+  padding: 10px;
+  justify-content: space-between;
+
+}
+
+header div.linkshome{
+  text-align: right;
+}
+
+.logo{
+  border-radius: 50%;
+  width: 70px;
+}
+
+.namepage{
+  width: 100%;
+}
+.menu, .hidden {
+  display: none;
+}
+
+.menu.show {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--principal);
+  margin-top: 5px;
+}
+
+.logoMobile{
+  width: 60px;
+  border-radius: 50%;
+}
+
+.menu-icon {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .menu-icon.open{
+    display: none;
+  }
+  
+.container_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
+}
+
+.menu li{
+    list-style: none;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.button_screem{
+  display: none;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.link:hover{
+  color: var(--principal);
+  background-color: rgba(240, 248, 255, 0.493);
+}
+
+
+@media only screen and (min-width: 768px) {
+  .hidden{
+    display: none;
+  }
+
+  .logo{
+    width: 100px;
+  }
+  .menu-icon{
+    display: none;
+  }
+  .menu {
+    display: flex;
+    width: 100%;
+    margin: 5px 10px ;  
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+  }
+
+
+  .menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    padding: 0;
+    margin-left: 10px;
+  }
+
+  .menu li {
+    width: auto; 
+    margin: 0 10px; 
+    font-size: 1em;
+  }
+  .link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+  .button_screem{
+    position: relative;
+    right:10;
+}
+
+.image{
+  margin-left: 10px;
+}
+}

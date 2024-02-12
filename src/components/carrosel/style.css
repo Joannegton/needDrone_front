@@ -1,0 +1,12 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel img {
+    width: 300px;
+
+    display: block;
+  }
+  

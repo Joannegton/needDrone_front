@@ -1,0 +1,74 @@
+.card_edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.164);
+    padding: 0 5px 0 3px;
+}
+.container_drone{
+   display: flex;
+}
+
+.cardDrone{
+    display: flex;
+    width: 370px;
+    margin: 10px auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.containerImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 7px 0 0 7px;
+}
+
+.containerImg .button_login{
+    font-size: 1em;
+    padding: 2px 4px;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin-left: 5px;
+    padding: 10px;
+}
+
+.infos p{
+    margin: 2px 4px;
+}
+
+.especificacoes{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1px;
+    margin: 5px 0;
+}
+.especificacoes p{
+    background-color: #68676770;
+    font-size: .9em;
+    border-radius: 5px;
+    min-width: 20px;
+    padding: 2px;
+    margin: 2px 0;
+}
+
+
+.statusDrone {
+    font-weight: bold; /* Opcional: torna o texto mais destacado */
+    font-size: 1em;
+    text-align: center;
+    max-height: 93px;
+    border-radius: 0 0 0 5px;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl; /* Faz o texto fluir verticalmente da direita para a esquerda */
+    transform: rotate(180deg); /* Opcional: rotaciona o texto para que possa ser lido de cima para baixo */
+  }

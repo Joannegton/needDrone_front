@@ -1,0 +1,174 @@
+.container_errosForms {
+    font-size: .8em;
+    color: red;
+    margin: 0 0 5px 5px;
+    text-align: left;
+}
+
+.containerSuccessForm{
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    background-color: rgba(3, 99, 182, 0.158);
+    margin-top: 10px;
+}
+
+
+/*sliderAvaliacao*/
+.container_avaliacoes_slider {
+    display: flex;
+    overflow: hidden;
+    
+}
+
+/*CardAvaliacao*/
+.review-card {
+    background-color: #f2ff3554;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    max-width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+.review-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.review-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.review-card p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.stars {
+    color: red;
+}
+
+.review-card.visible {
+opacity: 1;
+}
+
+.review-card.hidden {
+display: none;
+}
+
+/*Forbiden/proibido*/
+.forbidden-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.forbidden-content {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forbidden-content h1 {
+    font-size: 80px;
+    color: #dc3545;
+}
+
+.forbidden-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.forbidden-content p {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.forbidden-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.forbidden-content button:hover {
+    background-color: #0056b3;
+}
+
+/*PropostaCard*/
+.proposta-card{
+    width: 400px;
+    margin: 5px auto;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+
+}
+
+.proposta_infos{
+display: flex;
+align-items: center;}
+
+.proposta_infos p{
+    margin: 5px;
+}
+
+.drone{
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    border-radius: 5px;
+    width: 391px;
+    margin: auto;
+}
+
+.botoes{
+    font-size: .9em;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+  
+
+@media only screen and (min-width: 768px) {
+    
+    /*sliderAvaliacao*/
+    .container_avaliacoes_slider{
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+    }
+
+}
+
+@media only screen and (min-width: 932px) {
+    .proposta-card{
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .proposta_infos p{
+        margin: 5px;
+    }
+}
+
+  
