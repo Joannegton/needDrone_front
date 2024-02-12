@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "needDronefront",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-02-12T10:07:58.565Z"
+}

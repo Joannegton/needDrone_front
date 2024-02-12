@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "needDronefront",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-amplify4047f12f63244-staging-93729-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/afe26d9a07566f648fdd0c29d638dffc76d61162"
+}
