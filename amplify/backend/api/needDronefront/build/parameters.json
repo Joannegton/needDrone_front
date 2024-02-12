@@ -1,8 +1,0 @@
-{
-    "AppSyncApiName": "needDronefront",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": false,
-    "AuthModeLastUpdated": "2024-02-12T10:07:58.565Z",
-    "S3DeploymentBucket": "amplify-amplify4047f12f63244-staging-93729-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/afe26d9a07566f648fdd0c29d638dffc76d61162"
-}

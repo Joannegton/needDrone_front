@@ -1,7 +1,0 @@
-type ClienteUser @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  name: String
-  cpf: String
-  tel: String
-  endereco: String
-}
