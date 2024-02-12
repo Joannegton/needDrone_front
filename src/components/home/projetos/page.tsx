@@ -54,7 +54,7 @@ const Projetos = ()=>{
       };
 
  return(
-    <div className="container_drone">
+    <div className="container_projeto">
             <div className="card_edit">
                 <h2 className="titulo3">Meus Projetos</h2>
                 <Link to="/projeto/cadastro">Adicionar Projeto</Link>
@@ -62,7 +62,9 @@ const Projetos = ()=>{
             {content.map((projeto) => (<>
                 <div key={projeto._id} className="container">
                         <div className="informa">
-                            <h3 className='titulo3'>{projeto.title}</h3>
+                            <Link to={`/ordemservico/${projeto._id}`}>
+                                <h3 className='titulo3'>{projeto.title}</h3>
+                            </Link>
                             <p><strong>Descrição:</strong> {projeto.description}</p>
                             <p><strong>Área de cobertura:</strong> até {projeto.cobertArea}m².</p>
                             <p><strong>Duração:</strong> até {120} minutos</p>
