@@ -12,7 +12,7 @@ const Ordem = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://18.224.25.213:5000/proposta/projeto/${projectId}`);
+                const response = await fetch(`http://localhost:5000/proposta/projeto/${projectId}`);
                 if (!response.ok) {
                     throw new Error(`Erro ao obter propostas do projeto: ${response.statusText}`);
                 }

@@ -49,7 +49,7 @@ const FormAtualizacaoClient = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://18.224.25.213:5000/cliente/${userId}`);
+        const response = await fetch(`http://localhost:5000/cliente/${userId}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -119,7 +119,7 @@ const FormAtualizacaoClient = () => {
       foto: foto,
     };
     try {
-      const response = await fetch(`http://18.224.25.213:5000/cliente/atualizar/${userId}`, {
+      const response = await fetch(`http://localhost:5000/cliente/atualizar/${userId}`, {
         method: 'PUT',
         headers: {'Content-type': 'application/json',
                 'Authorization': `Bearer ${token}`},

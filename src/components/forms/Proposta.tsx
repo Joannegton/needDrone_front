@@ -29,7 +29,7 @@ const FormProposta: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://18.224.25.213:5000/projeto/${projectId}`);
+        const response = await fetch(`http://localhost:5000/projeto/${projectId}`);
         if (!response.ok) {
           throw new Error(`Erro ao obter dados do projeto: ${response.statusText}`);
         }
@@ -61,7 +61,7 @@ const FormProposta: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://18.224.25.213:5000/drones/${userId}`);
+        const response = await fetch(`http://localhost:5000/drones/${userId}`);
         if (!response.ok) {
           throw new Error(`Erro ao obter drones: ${response.statusText}`);
         }
@@ -78,7 +78,7 @@ const FormProposta: React.FC = () => {
 
   const onSubmit = async (data: PropostaForm) => {
     try {
-      const response = await fetch('http://18.224.25.213:5000/proposta', {
+      const response = await fetch('http://localhost:5000/proposta', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

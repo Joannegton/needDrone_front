@@ -18,7 +18,7 @@ export default function FormLogin(){
 
     const [error, setError] = useState(false)
 
-    const url = 'http://18.224.25.213:5000/entrar'
+    const url = 'http://localhost:5000/entrar'
 
     const onSubmit = async () => {
         

@@ -7,7 +7,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroClient() {
-    const url = 'http://18.224.25.213:5000/cliente/cadastro';
+    const url = 'http://localhost:5000/cliente/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

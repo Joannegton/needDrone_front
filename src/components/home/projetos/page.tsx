@@ -36,7 +36,7 @@ const Projetos = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`http://18.224.25.213:5000/projeto/`)
+            const request = await fetch(`http://localhost:5000/projeto/`)
             const data: IProjeto[] = await request.json() 
             const userProjetos = data.filter(projeto => projeto.userId === id)
             setContent(userProjetos)    

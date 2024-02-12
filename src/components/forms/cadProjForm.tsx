@@ -21,7 +21,7 @@ export default function FormCadProj() {
 
 
 
-    const url = "http://18.224.25.213:5000/projeto"
+    const url = "http://localhost:5000/projeto"
     const onSubmit = async () => {
 
         const token = localStorage.getItem('token')

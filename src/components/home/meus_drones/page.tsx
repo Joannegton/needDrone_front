@@ -21,7 +21,7 @@ const Drones = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`http://18.224.25.213:5000/drone`)
+            const request = await fetch(`http://localhost:5000/drone`)
             const data: IDrone[] = await request.json() 
             const userDrones = data.filter(drone => drone.userId === id)
             setContent(userDrones)    
