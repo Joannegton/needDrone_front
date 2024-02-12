@@ -1,9 +1,15 @@
 import Menu from "../../components/menu/page"
+import DropZone from "../../components/uploadImage/app"
 
 const Privacidade = () =>{
     return(        
         <main>
             <Menu/>
+            <br />
+            <DropZone onFileUploaded={function (fileUrl: string): void {
+                console.log(fileUrl)
+            } } />
+            
             <h1>Política de Privacidade</h1>
             <p className="textos">A Need a Drone considera a privacidade dos dados dos seus usuários uma prioridade e, por isso, solicitamos que leia atentamente nossa política.</p>
             <section>
