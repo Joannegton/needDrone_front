@@ -4,6 +4,7 @@ import { useEffect, useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ErrosForms from '../cards/erroForms';
 import SuccessForms from '../cards/successForms';
+import DropZone from '../uploadImage/app';
 
 
 type IBGEUFResponse = {
@@ -153,8 +154,9 @@ const FormAtualizacaoClient = () => {
         <h1 className='titulo'>Atualizar Perfil</h1>
         <div className="containerData">
             <img src={foto} alt="img perfil" />
-            <input type="file" onChange={(event) => {const file = event.target.files ? event.target.files[0] : null;}} />
-
+            <DropZone onFileUploaded={function (fileUrl: string): void {
+                console.log(fileUrl)
+            } } />
             <label htmlFor="name">Nome*</label>
             <input 
             type="text" 

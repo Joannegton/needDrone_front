@@ -1,18 +1,21 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { useParams } from 'react-router-dom';
 
 interface DropZoneProps {
   onFileUploaded: (fileUrl: string) => void; // Função para receber a URL do arquivo carregado
 }
 
 const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
+  const {id} = useParams()
+
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     const formData = new FormData();
     formData.append('file', file); // 'file' é o nome do campo esperado pelo servidor
 
     // Substitua 'http://localhost:5000/cliente/upload' pelo endpoint correto do seu servidor
-    fetch('http://localhost:5000/cliente/upload', {
+    fetch(`http://localhost:5000/cliente/upload/${id}`, {
       method: 'POST',
       body: formData, // Envio do formulário com o arquivo
       // Não defina o 'Content-Type' header quando estiver usando FormData
