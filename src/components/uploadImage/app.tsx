@@ -16,8 +16,8 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
     if (userType !== null) {
       formData.append('userType', userType); // Adiciona userType somente se não for null
     }
-    // Substitua 'http://localhost:5000/cliente/upload' pelo endpoint correto do seu servidor
-    fetch(`http://localhost:5000/cliente/upload/${id}`, {
+    // Substitua 'http://18.188.189.201:5000/cliente/upload' pelo endpoint correto do seu servidor
+    fetch(`http://18.188.189.201:5000/cliente/upload/${id}`, {
       method: 'POST',
       body: formData, // Envio do formulário com o arquivo
       // Não defina o 'Content-Type' header quando estiver usando FormData

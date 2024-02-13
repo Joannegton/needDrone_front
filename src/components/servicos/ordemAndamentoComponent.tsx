@@ -19,7 +19,7 @@ const AndamentoordemComponent: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/proposta/${propostaId}`);
+        const response = await fetch(`http://18.188.189.201:5000/proposta/${propostaId}`);
         if (response.ok) {
           const data = await response.json();
           setProposta(data);
@@ -39,7 +39,7 @@ const AndamentoordemComponent: React.FC = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch(`http://localhost:5000/proposta/atualizar/${propostaId}`, {
+      const response = await fetch(`http://18.188.189.201:5000/proposta/atualizar/${propostaId}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',

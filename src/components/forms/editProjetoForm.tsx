@@ -47,7 +47,7 @@ const FormAtualizacaoProj: React.FC = () => {
 
   const getFetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/projeto/${id}`);
+      const response = await fetch(`http://18.188.189.201:5000/projeto/${id}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

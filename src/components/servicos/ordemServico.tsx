@@ -39,7 +39,7 @@ const OrdemServicoComponent = () =>{
     
     useEffect(()=>{
         const fetchData = async () =>{  
-            const response = await fetch('http://localhost:5000/projeto')
+            const response = await fetch('http://18.188.189.201:5000/projeto')
             const data = await response.json()
             setContent(data) 
         }

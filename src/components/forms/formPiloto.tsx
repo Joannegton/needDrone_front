@@ -9,7 +9,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroPiloto(){
-    const url = 'http://localhost:5000/piloto/cadastro';
+    const url = 'http://18.188.189.201:5000/piloto/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

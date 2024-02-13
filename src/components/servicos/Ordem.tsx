@@ -52,7 +52,7 @@ const Ordem = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/projeto/${projectId}`);
+                const response = await fetch(`http://18.188.189.201:5000/projeto/${projectId}`);
                 if (!response.ok) {
                     throw new Error(`Erro ao obter dados do projeto: ${response.statusText}`);
                 }

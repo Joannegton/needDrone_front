@@ -38,7 +38,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/piloto/${proposta.enviadorProposta}`);
+        const response = await fetch(`http://18.188.189.201:5000/piloto/${proposta.enviadorProposta}`);
         const data = await response.json();
         if (data) {
           setPiloto(data);
@@ -62,7 +62,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`http://18.188.189.201:5000/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -97,7 +97,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`http://18.188.189.201:5000/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',

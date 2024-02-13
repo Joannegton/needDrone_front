@@ -28,7 +28,7 @@ export default function PilotoPerfil(){
     const {id} = useParams()
 
     const fetchData = async () => {
-        const response = await fetch(`http://localhost:5000/piloto/${id}`)
+        const response = await fetch(`http://18.188.189.201:5000/piloto/${id}`)
         const data = await response.json()
         setContent(data)
         setName(data.name);
