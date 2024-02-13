@@ -21,7 +21,7 @@ export default function FormCadProj() {
 
 
 
-    const url = "http://18.188.189.201:5000/projeto"
+    const url = "https://slug-liberal-wallaby.ngrok-free.app:5000/projeto"
     const onSubmit = async () => {
 
         const token = localStorage.getItem('token')

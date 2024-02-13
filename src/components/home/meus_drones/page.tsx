@@ -21,7 +21,7 @@ const Drones = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`http://18.188.189.201:5000/drone`)
+            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/drone`)
             const data: IDrone[] = await request.json() 
             const userDrones = data.filter(drone => drone.userId === id)
             setContent(userDrones)    

@@ -19,7 +19,7 @@ export default function ClientePerfil(){
     const {id} = useParams()
 
     const fetchData = async () => {
-        const response = await fetch(`http://18.188.189.201:5000/cliente/${id}`)
+        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/${id}`)
         const data = await response.json()
         setContent(data)
         setName(data.name);

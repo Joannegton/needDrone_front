@@ -16,9 +16,9 @@ const ResumoPerfil: React.FC = () => {
     const typeUser = localStorage.getItem('typeUser');
     let url = ''
     if(typeUser === 'cliente') {
-         url = `http://18.188.189.201:5000/cliente/${userId}`
+         url = `https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/${userId}`
     }else {
-         url = `http://18.188.189.201:5000/piloto/${userId}`
+         url = `https://slug-liberal-wallaby.ngrok-free.app:5000/piloto/${userId}`
     }
 
     const  fetchData = async ()=>{
