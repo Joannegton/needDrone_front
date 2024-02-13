@@ -153,9 +153,9 @@ const FormAtualizacaoClient = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1 className='titulo'>Atualizar Perfil</h1>
         <div className="containerData">
-            <img src={foto} alt="img perfil" />
+            <img className='fotoPerfil' src={foto} alt="img perfil" />
             <DropZone onFileUploaded={function (fileUrl: string): void {
-                console.log(fileUrl)
+                console.log(fileUrl) //usar futuramente
             } } />
             <label htmlFor="name">Nome*</label>
             <input 

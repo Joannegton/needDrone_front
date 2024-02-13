@@ -125,6 +125,13 @@ a:hover{
 .containerSobrepDate .sobreposicaoimg input{
     margin-left: 10px;
 }
+
+.fotoPerfil{
+    width: 170px;
+    border-radius: 50%;
+    margin: auto;
+}
+
 /*cadastro drone*/
 .selects{
     display: grid;

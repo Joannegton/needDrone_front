@@ -39,7 +39,7 @@ export default function ClientePerfil(){
     return(
         <>
             <aside className='containerDado'>
-                <img src={perfil} width={150} height={150} alt="Foto de perfil" /> 
+                <img src={foto} className='fotoPerfil'  alt="Foto de perfil" /> 
                 <h2 id="nome">{name}</h2>
             </aside>
 

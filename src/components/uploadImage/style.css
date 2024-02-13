@@ -1,0 +1,22 @@
+.containerFile{
+    height: 20px;
+    width: 300px;
+    background-color: rgba(40, 54, 54, 0.644);
+    background-image: url('/src/assets/uploadFile.png');
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+    background-position: center bottom ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px auto 10px;
+    font-size: .8em;
+    opacity: 80%;
+}
+
+.textFile{
+    padding: 3px;
+    color: rgb(214, 213, 213);
+}

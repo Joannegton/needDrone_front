@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { useParams } from 'react-router-dom';
-
+import './style.css'
 interface DropZoneProps {
   onFileUploaded: (fileUrl: string) => void; // Função para receber a URL do arquivo carregado
 }
@@ -34,12 +33,17 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
   });
 
   return (
-    <div {...getRootProps()} className={isDragActive ? 'active' : ""}>
+    <div {...getRootProps()} className={isDragActive ? 'active' : "containerFile"}>
       <input {...getInputProps()} />
       {
         isDragActive
-          ? <p>Drop the file here ...</p> 
-          : <p>Drag 'n' drop an image here, or click to select file</p>
+          ? <p className='textFile'>Arraste uma imagem...</p> 
+          : 
+          <>
+            <p className='textFile'>Arraste uma imagem </p>
+            <p className='textFile'> ou clique e selecione</p>
+          </>
+          
       }
     </div>
   );
