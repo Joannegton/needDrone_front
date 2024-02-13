@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 interface IResumoPerfil{
     name: string
+    foto: string
 }
 
 
@@ -44,7 +45,7 @@ const ResumoPerfil: React.FC = () => {
                 </div>
 
                 <div className="card_perfil">
-                    <img src={perfil} width={80} height={80} alt="Foto de perfil" />
+                    <img src={content.foto} width={80} height={80} alt="Foto de perfil" />
                     <div className='infos'>
                         <h3 className="texto3">{content.name}</h3>
                         <p>Numeros de estrelas (0 avaliações)</p>
