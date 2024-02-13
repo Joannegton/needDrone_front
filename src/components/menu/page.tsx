@@ -26,7 +26,7 @@ export default function Menu() {
   }, []);
 
   const singout = () =>{
-    localStorage.removeItem('token')
+    localStorage.removeItem('token')//
     localStorage.removeItem('userId')
     localStorage.removeItem('email')
     setLogged(false)
@@ -86,7 +86,7 @@ export default function Menu() {
                 <Link className='link' to={`/dashboard/${userId}`}>Dashboard cliente</Link>
               </li>
             </ul>
-           
+            <button className='button_login' onClick={singout}>Sair</button>
           </div>
         </header>
       
