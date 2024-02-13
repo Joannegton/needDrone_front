@@ -45,6 +45,7 @@ const FormAtualizacaoClient = () => {
     
     const token = localStorage.getItem('token')
     const userId = localStorage.getItem('userId')
+    const userType = localStorage.getItem('typeUser')
 
   // busca de dados (fetching) de uma API
   useEffect(() => {
@@ -109,7 +110,6 @@ const FormAtualizacaoClient = () => {
     //cria o request gravando os dados na API
     const bodyForm = {
       name: name,
-      email: email,
       tel: tel,
       whatsapp: whatsapp,
       rua: rua,
@@ -117,7 +117,6 @@ const FormAtualizacaoClient = () => {
       cidade: cidade,
       estado: estado,
       biografia: biografia,
-      foto: foto,
     };
     try {
       const response = await fetch(`http://localhost:5000/cliente/atualizar/${userId}`, {
@@ -155,6 +154,7 @@ const FormAtualizacaoClient = () => {
         <div className="containerData">
             <img className='fotoPerfil' src={foto} alt="img perfil" />
             <DropZone onFileUploaded={function (fileUrl: string): void {
+                if(fileUrl) window.location.reload()
                 console.log(fileUrl) //usar futuramente
             } } />
             <label htmlFor="name">Nome*</label>

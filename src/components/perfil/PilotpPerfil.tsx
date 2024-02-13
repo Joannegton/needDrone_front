@@ -52,7 +52,7 @@ export default function PilotoPerfil(){
     return(
         <>
             <aside className='containerDado'>
-                <img src={perfil} alt="Foto de perfil" />
+                <img src={foto} alt="Foto de perfil" />
                 <h2 className='titulo'>{name}</h2>
             </aside>
 

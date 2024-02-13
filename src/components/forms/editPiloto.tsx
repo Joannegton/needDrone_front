@@ -6,6 +6,7 @@ import { useEffect, useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ErrosForms from '../cards/erroForms';
 import SuccessForms from '../cards/successForms';
+import DropZone from '../uploadImage/app';
 
 type IBGEUFResponse = {
     sigla: string;
@@ -44,6 +45,7 @@ export default function FormAtualizacaoPiloto(){
     const {register, handleSubmit} = useForm()
     const navigate = useNavigate()
     
+    const token = localStorage.getItem('token')
     const userId = localStorage.getItem('userId') 
 
     const getFetchData =async () => {
@@ -99,10 +101,8 @@ export default function FormAtualizacaoPiloto(){
       };
 
     const onSubmit = async (data: any) => {
-        const token = localStorage.getItem('token')
         const bodyForm ={
             name: name,
-            email: email,
             tel: tel,
             whatsapp: whatsapp,
             rua: rua,
@@ -110,8 +110,6 @@ export default function FormAtualizacaoPiloto(){
             cidade: cidade,
             estado: estado,
             biografia: biografia,
-            foto: foto,
-            licenca: licenca,
             experiencia: experiencia,
             especializacao: especializaca
         }
@@ -134,7 +132,7 @@ export default function FormAtualizacaoPiloto(){
 
             } else if(response.status === 409){
                 setEmailExists(true)
-                setTimeout(() => navigate("/entrar"), 3000)
+                setTimeout(() => navigate("/entrar"), 2000)
             } else{
                 console.error("Erro no cadastro de Piloto: ", response.statusText)
             }
@@ -148,9 +146,11 @@ export default function FormAtualizacaoPiloto(){
         <form onSubmit={handleSubmit(onSubmit)}>
             <h1 className='titulo'>Atualizar Perfil</h1>
             <div className="containerData">
-            <img src={foto} alt="img perfil" />
-            <input type="file" onChange={(event) => {const file = event.target.files ? event.target.files[0] : null;}} />
-
+            <img className='fotoPerfil' src={foto} alt="img perfil" />
+            <DropZone onFileUploaded={function (fileUrl: string): void {
+                if(fileUrl) window.location.reload()
+                console.log(fileUrl) //usar futuramente
+            } } />
             <label htmlFor="name">Nome*</label>
             <input 
             type="text" 

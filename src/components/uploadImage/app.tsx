@@ -7,12 +7,15 @@ interface DropZoneProps {
 
 const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
   const id = localStorage.getItem('userId')
+  const userType = localStorage.getItem('typeUser')
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     const formData = new FormData();
     formData.append('file', file); // 'file' é o nome do campo esperado pelo servidor
-
+    if (userType !== null) {
+      formData.append('userType', userType); // Adiciona userType somente se não for null
+    }
     // Substitua 'http://localhost:5000/cliente/upload' pelo endpoint correto do seu servidor
     fetch(`http://localhost:5000/cliente/upload/${id}`, {
       method: 'POST',
@@ -25,7 +28,7 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
       onFileUploaded(data.fileUrl); // Supondo que o servidor responda com a URL do arquivo carregado
     })
     .catch(error => console.error('Error uploading file:', error));
-  }, [onFileUploaded]);
+  }, [onFileUploaded, userType]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
