@@ -19,7 +19,7 @@ const AndamentoordemComponent: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/proposta/${propostaId}`);
+        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/proposta/${propostaId}`);
         if (response.ok) {
           const data = await response.json();
           setProposta(data);
@@ -39,7 +39,7 @@ const AndamentoordemComponent: React.FC = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/proposta/atualizar/${propostaId}`, {
+      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/proposta/atualizar/${propostaId}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',

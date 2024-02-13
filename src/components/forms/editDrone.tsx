@@ -26,7 +26,7 @@ const FormAtualizacaoDrone: React.FC = () => {
 
     const getFetchData =async () => {
         try {
-            const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/drone/${id}`)
+            const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/drone/${id}`)
             if (!response.ok) throw new Error('Network response was not ok')
             const data = await response.json()
             setContent(data)
@@ -58,7 +58,7 @@ const FormAtualizacaoDrone: React.FC = () => {
             status: status,
         };
         try {
-            const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/drone/atualizar/${id}`,{
+            const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/drone/atualizar/${id}`,{
                 method: "PUT",
                 headers: {'Content-type': 'application/json',
                 'Authorization': `Bearer ${token}`},

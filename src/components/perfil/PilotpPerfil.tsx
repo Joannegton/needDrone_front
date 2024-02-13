@@ -28,7 +28,7 @@ export default function PilotoPerfil(){
     const {id} = useParams()
 
     const fetchData = async () => {
-        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/piloto/${id}`)
+        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/piloto/${id}`)
         const data = await response.json()
         setContent(data)
         setName(data.name);

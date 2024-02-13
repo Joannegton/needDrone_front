@@ -51,7 +51,7 @@ const FormAtualizacaoClient = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/${userId}`);
+        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/cliente/${userId}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -119,7 +119,7 @@ const FormAtualizacaoClient = () => {
       biografia: biografia,
     };
     try {
-      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/atualizar/${userId}`, {
+      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/cliente/atualizar/${userId}`, {
         method: 'PUT',
         headers: {'Content-type': 'application/json',
                 'Authorization': `Bearer ${token}`},

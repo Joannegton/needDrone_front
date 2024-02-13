@@ -18,7 +18,7 @@ export default function FormLogin(){
 
     const [error, setError] = useState(false)
 
-    const url = 'https://slug-liberal-wallaby.ngrok-free.app:5000/entrar'
+    const url = 'https://slug-liberal-wallaby.ngrok-free.app/entrar'
 
     const onSubmit = async () => {
         

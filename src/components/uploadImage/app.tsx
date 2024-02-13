@@ -16,8 +16,8 @@ const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
     if (userType !== null) {
       formData.append('userType', userType); // Adiciona userType somente se não for null
     }
-    // Substitua 'https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/upload' pelo endpoint correto do seu servidor
-    fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/upload/${id}`, {
+    // Substitua 'https://slug-liberal-wallaby.ngrok-free.app/cliente/upload' pelo endpoint correto do seu servidor
+    fetch(`https://slug-liberal-wallaby.ngrok-free.app/cliente/upload/${id}`, {
       method: 'POST',
       body: formData, // Envio do formulário com o arquivo
       // Não defina o 'Content-Type' header quando estiver usando FormData

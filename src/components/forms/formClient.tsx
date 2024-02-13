@@ -7,7 +7,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroClient() {
-    const url = 'https://slug-liberal-wallaby.ngrok-free.app:5000/cliente/cadastro';
+    const url = 'https://slug-liberal-wallaby.ngrok-free.app/cliente/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

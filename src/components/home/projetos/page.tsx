@@ -36,7 +36,7 @@ const Projetos = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/projeto/`)
+            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/projeto/`)
             const data: IProjeto[] = await request.json() 
             const userProjetos = data.filter(projeto => projeto.userId === id)
             setContent(userProjetos)    

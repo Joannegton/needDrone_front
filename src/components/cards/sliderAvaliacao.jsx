@@ -37,7 +37,7 @@ const CardAvaliacaoSlider = () => {
   }, []);
 
   const fetchData = async ()=>{
-      const response = await fetch("https://slug-liberal-wallaby.ngrok-free.app:5000/comentario")
+      const response = await fetch("https://slug-liberal-wallaby.ngrok-free.app/comentario")
       const data = await response.json()  
       setConteudo(data)
   }

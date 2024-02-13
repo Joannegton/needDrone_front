@@ -26,7 +26,7 @@ const Drone: React.FC<DroneProps> = ({ id }) =>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app:5000/drone/${id}`)
+            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/drone/${id}`)
             const data = await request.json()
             setContent(data)    
         } catch (error) {
