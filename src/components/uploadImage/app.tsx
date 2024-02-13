@@ -7,7 +7,7 @@ interface DropZoneProps {
 }
 
 const DropZone: React.FC<DropZoneProps> = ({ onFileUploaded }) => {
-  const {id} = useParams()
+  const id = localStorage.getItem('userId')
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
