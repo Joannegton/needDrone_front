@@ -37,6 +37,10 @@
     color: var(--principal);
 }
 
+.mapa{
+    margin: 15px 0;
+}
+
 .containerProposta{
     width: 200px;
     margin: auto;

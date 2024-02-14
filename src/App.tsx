@@ -40,7 +40,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/mapa' element={<Maps/>} />
         <Route path="/" element={token ? <Navigate to="/ordemservico" /> : <Home />} />
         <Route path='/registro' element={<Registrar/>} />
         <Route path='/entrar' element={<Login/>} />

@@ -3,6 +3,7 @@ import Menu from "../menu/page";
 import React, { useEffect, useState } from 'react';
 import ForbiddenPage from '../cards/proibido';
 import ErrosForms from '../cards/erroForms';
+import Maps from '../maps/page';
 
 interface IordemServico {
     title: string;
@@ -102,11 +103,15 @@ const Ordem = () => {
               <div className="localization">
                   {localization}
               </div>
+              <div className='mapa'>
+                    <h2 className="titulo3">Local do evento:</h2>
+                    <Maps address={'rua dores de campos 456'}/>
+                </div>
               <div className="client">
                   <p>Cliente: <Link to={`/cliente/perfil/${userId}`}>{userName}</Link> {userAvaliacao}</p> 
                   <p>Data do Evento: {formatDate(deadline)}</p>
               </div>
-
+                
               <div className="proposta">
                 <h1>{estadoOrdem}</h1>
                 <button className='button_login' onClick={handleProposalClick}>Enviar Proposta</button>
