@@ -32,6 +32,7 @@ import EditarPerfilPiloto from './pages/piloto/editPerfil';
 import EditProjeto from './pages/clientes/editProjeto';
 import Proposta from './pages/Servicos/proposta';
 import Andamentoordem from './pages/Servicos/OrdemAndamento';
+import Maps from './components/maps/page';
 
 function App() {
   const token = localStorage.getItem('token')
@@ -39,7 +40,8 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={token ? <Navigate to="/ordemservico" /> : <Home />} />
+        <Route path='/mapa' element={<Maps/>} />
+        <Route path="/" element={token ? <Navigate to="/ordemservico" /> : <Home />} />
         <Route path='/registro' element={<Registrar/>} />
         <Route path='/entrar' element={<Login/>} />
         <Route path='/esquecisenha' element={<EsqueciSenha/>} />

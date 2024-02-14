@@ -1,0 +1,37 @@
+import React, { useEffect, useState } from 'react';
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+
+function Maps() {
+  // Estado inicial para as coordenadas
+  const [position, setPosition] = useState({ lat: -23.55052, lng: -46.633308 }); // Coordenadas iniciais de um local padrão (São Paulo, por exemplo)
+  
+  // Função para obter coordenadas a partir de um endereço
+  async function getCoordinatesForAddress(address) {
+    // Acesso à variável de ambiente diretamente de process.env
+    const apiKey = 'AIzaSyD45OqjoZmCs_6UOXhbgm3Bf5g60puoHK8';
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`);
+    const data = await response.json();
+    
+    if (data.status === 'OK') {
+      const { lat, lng } = data.results[0].geometry.location;
+      setPosition({ lat, lng });
+    } else {
+      throw new Error('Não foi possível encontrar o endereço');
+    }
+  }
+
+  // useEffect para chamar getCoordinatesForAddress quando o componente é montado
+  useEffect(() => {
+    getCoordinatesForAddress('Rua Dores de Campos 456, 07176390').catch(console.error);
+  }, []);
+
+  return (
+    <APIProvider apiKey={'AIzaSyD45OqjoZmCs_6UOXhbgm3Bf5g60puoHK8'}>
+      <Map center={position} zoom={15} style={{ width: '100%', height: '400px' }}>
+        <Marker position={position} />
+      </Map>
+    </APIProvider>
+  );
+}
+
+export default Maps;
