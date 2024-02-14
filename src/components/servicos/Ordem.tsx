@@ -98,7 +98,7 @@ const Ordem = () => {
                   <p>{droneType}</p>
                   <p>{imgQuality}</p>
                   <p>{cobertArea}m²</p>
-                  <p className={imgsubposition? 'Sobreposição': 'hidden' }>{imgsubposition}</p>
+                  <p className={imgsubposition? 'Sobreposição': 'hidden' }>Sobreposição</p>
               </div>
               <div className="localization">
                   {localization}

@@ -68,7 +68,7 @@ const OrdemServicoComponent = () =>{
                         <p>{cont.droneType}</p>
                         <p>{cont.imgQuality}</p>
                         <p>{cont.cobertArea}</p>
-                        <p>{cont.imgsubposition ? 'Sobreposição': '' }</p>
+                        <p className={cont.imgsubposition? 'Sobreposição': 'hidden' }>Sobreposição</p>
                     </div>
                     <div className="client">
                         <p>Cliente: <Link to={`/cliente/perfil/${cont.userId}`}>{cont.userName}</Link> Avaliação</p>

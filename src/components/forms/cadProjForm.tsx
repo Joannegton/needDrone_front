@@ -24,7 +24,6 @@ export default function FormCadProj() {
     const[areaCobertura, setAreaCobertura] = useState('')
     const[sobreposicaoImagem, setSobreposicaoImagem] = useState(false)
     const[prazoEntrega, setPrazoEntrega] = useState('')
-    const[budget, setBudget] = useState(50)
     const[rua, setRua] = useState('')
     const[localization, setLocalization] = useState('')
     const [success, setSuccess] = useState(false)
@@ -74,7 +73,6 @@ export default function FormCadProj() {
             cobertArea: areaCobertura,
             imgsubposition: sobreposicaoImagem,
             deadline: prazoEntrega,
-            budget: budget,
             localization: localization
         }
         try {
@@ -169,14 +167,14 @@ export default function FormCadProj() {
                         <label htmlFor="sobreposicaoImagem">Sobreposição de Imagem:</label>
                         <input type='checkbox'  {...register("sobreposicaoImagem")} checked={sobreposicaoImagem} onChange={(e) => {setSobreposicaoImagem(e.target.checked)}}/>
                     </aside>
-
+                    <h1 className="titulo3">Local do evento:</h1>
                     <aside>
                         <label htmlFor="rua">Rua/n°</label>
                         <input type="text" {...register("rua")} value={rua} onChange={(e) => {setRua(e.target.value)}} placeholder='Rua dores de campos, 456'/>
                     </aside>
                     <aside>
                         <label htmlFor="estado">Estado:</label>
-                        <select  {...register("estado")} onChange={(event) => { handleSelectUf(event)}}  >
+                        <select  {...register("estado")} onChange={(event) => { handleSelectUf(event)}}  required>
                             <option value="0">Selecione</option>
                             {ufs.map((uf) => (
                                 <option key={uf.sigla} value={uf.sigla}>{uf.nome}</option>
@@ -186,7 +184,7 @@ export default function FormCadProj() {
 
                     <aside>
                         <label htmlFor="cidade">Cidade:</label>
-                        <select  {...register("cidade")}  onChange={(event) => { handleSelectCity(event)} } >
+                        <select  {...register("cidade")}  onChange={(event) => { handleSelectCity(event)} } required >
                             <option value="0">Selecione</option>
                             {cities.map((city) => (
                             <option key={city.id} value={city.nome}>{city.nome}</option>

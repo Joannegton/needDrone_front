@@ -142,7 +142,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
             <div>
               <p><strong>Proposta de:</strong> <Link to={`/piloto/perfil/${proposta.enviadorProposta}`}>{piloto.name}</Link></p>
               <p><strong>Oferta Inicial:</strong> {proposta.ofertaInicial}</p>
-              <p><strong>Oferta Final:</strong> {proposta.ofertaFinal}</p>
+              <p><strong>Oferta Final:</strong> {proposta.ofertaFinal}</p>a
               <p><strong>Detalhes da Proposta:</strong> {proposta.detalhesProposta}</p>
             </div>
             <img src={proposta.status === 'cancelado' ? canceled : accepted} 
