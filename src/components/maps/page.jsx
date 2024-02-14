@@ -27,7 +27,7 @@ function Maps({ address }) {
 
   return (
     <APIProvider apiKey={'AIzaSyD45OqjoZmCs_6UOXhbgm3Bf5g60puoHK8'}>
-      <Map center={position} zoom={10} style={{ width: '100%', height: '100px' }}>
+      <Map center={position} zoom={11} style={{ width: '100%', height: '100px' }}>
         <Marker position={position} />
       </Map>
     </APIProvider>

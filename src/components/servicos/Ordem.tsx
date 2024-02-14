@@ -105,7 +105,7 @@ const Ordem = () => {
               </div>
               <div className='mapa'>
                     <h2 className="titulo3">Local do evento:</h2>
-                    <Maps address={'rua dores de campos 456'}/>
+                    <Maps address={localization}/>
                 </div>
               <div className="client">
                   <p>Cliente: <Link to={`/cliente/perfil/${userId}`}>{userName}</Link> {userAvaliacao}</p> 

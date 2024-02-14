@@ -1,6 +1,4 @@
 import './style.css'
-
-
 import { useForm } from 'react-hook-form';
 import { useEffect, useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';

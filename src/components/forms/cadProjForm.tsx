@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import './style.css'
 import {useNavigate} from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import SuccessForms from '../cards/successForms';
 
-
+type IBGEUFResponse = {
+    sigla: string;
+    nome: string;
+  };
+  type IBGECITYResponse = {
+    id: number;
+    nome: string;
+  };
 
 export default function FormCadProj() {
     const { register, handleSubmit} = useForm()
@@ -17,9 +24,43 @@ export default function FormCadProj() {
     const[areaCobertura, setAreaCobertura] = useState('')
     const[sobreposicaoImagem, setSobreposicaoImagem] = useState(false)
     const[prazoEntrega, setPrazoEntrega] = useState('')
+    const[budget, setBudget] = useState(50)
+    const[rua, setRua] = useState('')
+    const[localization, setLocalization] = useState('')
     const [success, setSuccess] = useState(false)
 
+    const [ufs, setUfs] = useState<IBGEUFResponse[]>([]);
+    const [cities, setCities] = useState<IBGECITYResponse[]>([]);
+    const [selectedUf, setSelectedUf] = useState("");
+    const [selectedCity, setSelectedCity] = useState("");
 
+    useEffect(() => {
+        fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados/")
+          .then((response) => response.json())
+          .then((data) => setUfs(data));
+      }, []);
+    
+    useEffect(() => {
+    if (selectedUf === "0") {
+        return;
+    }
+    const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`;
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => setCities(data));
+    }, [selectedUf]);
+    
+    const handleSelectUf = (event: ChangeEvent<HTMLSelectElement>) => {
+        const uf = event.target.value;
+        setSelectedUf(uf);
+    };
+    
+    const handleSelectCity = (event: ChangeEvent<HTMLSelectElement>) => {
+        const city = event.target.value;
+        setSelectedCity(city);
+    };
+
+    useEffect(()=>{setLocalization(`${rua}. ${selectedCity} - ${selectedUf}`)}, [selectedCity])
 
     const url = "http://localhost:5000/projeto"
     const onSubmit = async () => {
@@ -32,7 +73,9 @@ export default function FormCadProj() {
             imgQuality: qualidadeImagem,
             cobertArea: areaCobertura,
             imgsubposition: sobreposicaoImagem,
-            deadline: prazoEntrega
+            deadline: prazoEntrega,
+            budget: budget,
+            localization: localization
         }
         try {
             const response = await fetch(url,{
@@ -47,7 +90,8 @@ export default function FormCadProj() {
                 setSuccess(true)
                 const id = localStorage.getItem('userId')
                 setTimeout(()=> navigate(`/dashboard/${id}`), 3000)
-                
+            }else{
+                console.log(bodyForm)
             }
 
         } catch (error) {
@@ -61,6 +105,10 @@ export default function FormCadProj() {
         setSobreposicaoImagem(false)
         setTipoDrone('')
         setTitulo('')
+        setRua('')
+        setSelectedCity('')
+        setSelectedUf('')
+        setLocalization('')
         
     };
 
@@ -110,17 +158,42 @@ export default function FormCadProj() {
                             <option value="2000">2 ou mais km²</option>
                         </select>
                     </aside>
-                
-                        <aside className='prazoEntrega'>
-                            <label htmlFor="prazoEntrega">Prazo de Entrega:</label>
-                            <input className='select' type="date" {...register("prazoEntrega")} value={prazoEntrega} onChange={(e) => {setPrazoEntrega(e.target.value)}}/>
-                        </aside>
+
+                    <aside className='prazoEntrega'>
+                        <label htmlFor="prazoEntrega">Prazo de Entrega:</label>
+                        <input className='select' type="date" {...register("prazoEntrega")} value={prazoEntrega} onChange={(e) => {setPrazoEntrega(e.target.value)}}/>
+                    </aside>
                     
                     </div>
-                        <aside className='sobreposicaoimg'>
-                            <label htmlFor="sobreposicaoImagem">Sobreposição de Imagem:</label>
-                            <input type='checkbox'  {...register("sobreposicaoImagem")} checked={sobreposicaoImagem} onChange={(e) => {setSobreposicaoImagem(e.target.checked)}}/>
-                        </aside>
+                    <aside className='sobreposicaoimg'>
+                        <label htmlFor="sobreposicaoImagem">Sobreposição de Imagem:</label>
+                        <input type='checkbox'  {...register("sobreposicaoImagem")} checked={sobreposicaoImagem} onChange={(e) => {setSobreposicaoImagem(e.target.checked)}}/>
+                    </aside>
+
+                    <aside>
+                        <label htmlFor="rua">Rua/n°</label>
+                        <input type="text" {...register("rua")} value={rua} onChange={(e) => {setRua(e.target.value)}} placeholder='Rua dores de campos, 456'/>
+                    </aside>
+                    <aside>
+                        <label htmlFor="estado">Estado:</label>
+                        <select  {...register("estado")} onChange={(event) => { handleSelectUf(event)}}  >
+                            <option value="0">Selecione</option>
+                            {ufs.map((uf) => (
+                                <option key={uf.sigla} value={uf.sigla}>{uf.nome}</option>
+                            ))}
+                        </select>
+                    </aside>
+
+                    <aside>
+                        <label htmlFor="cidade">Cidade:</label>
+                        <select  {...register("cidade")}  onChange={(event) => { handleSelectCity(event)} } >
+                            <option value="0">Selecione</option>
+                            {cities.map((city) => (
+                            <option key={city.id} value={city.nome}>{city.nome}</option>
+                            ))}
+                        </select>
+                        <p className={selectedCity !== ''? 'titulo3': 'hidden'}>{localization}</p>
+                    </aside>
                 </div>
                 {success && <SuccessForms texto={'Projeto cadastrado com sucesso!'}/>}
                 <button type="submit">Enviar</button>
