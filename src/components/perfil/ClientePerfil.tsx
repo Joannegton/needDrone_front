@@ -19,7 +19,7 @@ export default function ClientePerfil(){
     const {id} = useParams()
 
     const fetchData = async () => {
-        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/cliente/${id}`)
+        const response = await fetch(`https://needdrone.onrender.com/cliente/${id}`)
         const data = await response.json()
         setContent(data)
         setName(data.name);

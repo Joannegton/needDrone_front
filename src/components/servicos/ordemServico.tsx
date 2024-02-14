@@ -39,7 +39,7 @@ const OrdemServicoComponent = () =>{
     
     useEffect(()=>{
         const fetchData = async () =>{  
-            const response = await fetch('https://slug-liberal-wallaby.ngrok-free.app/projeto')
+            const response = await fetch('https://needdrone.onrender.com/projeto')
             const data = await response.json()
             setContent(data) 
         }

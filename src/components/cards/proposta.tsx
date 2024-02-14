@@ -38,7 +38,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/piloto/${proposta.enviadorProposta}`);
+        const response = await fetch(`https://needdrone.onrender.com/piloto/${proposta.enviadorProposta}`);
         const data = await response.json();
         if (data) {
           setPiloto(data);
@@ -62,7 +62,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -97,7 +97,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',

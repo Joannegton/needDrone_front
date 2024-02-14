@@ -21,7 +21,7 @@ const Drones = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`https://slug-liberal-wallaby.ngrok-free.app/drone`)
+            const request = await fetch(`https://needdrone.onrender.com/drone`)
             const data: IDrone[] = await request.json() 
             const userDrones = data.filter(drone => drone.userId === id)
             setContent(userDrones)    
