@@ -26,7 +26,7 @@ const Drone: React.FC<DroneProps> = ({ id }) =>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`http://localhost:5000/drone/${id}`)
+            const request = await fetch(`https://needdrone.onrender.com/drone/${id}`)
             const data = await request.json()
             setContent(data)    
         } catch (error) {

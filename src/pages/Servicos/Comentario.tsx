@@ -7,7 +7,8 @@ const Comentario = () =>{
     return(
         <main>
             <Menu/>
-            <FormComentario setEstrelas={setEstrelas} />
+            
+            <FormComentario pilotoId={""} />
       <p>Número de estrelas selecionadas: {estrelas}</p>
         </main>
     )

@@ -36,7 +36,7 @@ const Projetos = ()=>{
 
     const fetchData = async ()=>{
         try {
-            const request = await fetch(`http://localhost:5000/projeto/`)
+            const request = await fetch(`https://needdrone.onrender.com/projeto/`)
             const data: IProjeto[] = await request.json() 
             const userProjetos = data.filter(projeto => projeto.userId === id)
             setContent(userProjetos)    

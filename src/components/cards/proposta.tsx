@@ -38,7 +38,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/piloto/${proposta.enviadorProposta}`);
+        const response = await fetch(`https://needdrone.onrender.com/piloto/${proposta.enviadorProposta}`);
         const data = await response.json();
         if (data) {
           setPiloto(data);
@@ -62,7 +62,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -97,7 +97,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -141,9 +141,9 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
           <div className="proposta_infos">
             <div>
               <p><strong>Proposta de:</strong> <Link to={`/piloto/perfil/${proposta.enviadorProposta}`}>{piloto.name}</Link></p>
-              <p><strong>Oferta Inicial:</strong> {proposta.ofertaInicial}</p>
-              <p><strong>Oferta Final:</strong> {proposta.ofertaFinal}</p>a
-              <p><strong>Detalhes da Proposta:</strong> {proposta.detalhesProposta}</p>
+              <p><strong>Valor:</strong> {proposta.ofertaFinal}</p>
+              <p><strong>Detalhes da Proposta:</strong></p>
+              <p className='textos'>{proposta.detalhesProposta}</p>
             </div>
             <img src={proposta.status === 'cancelado' ? canceled : accepted} 
                 className={proposta.status !== ''  ? '' : 'hidden'} 

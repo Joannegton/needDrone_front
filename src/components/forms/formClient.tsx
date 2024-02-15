@@ -7,7 +7,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroClient() {
-    const url = 'http://localhost:5000/cliente/cadastro';
+    const url = 'https://needdrone.onrender.com/cliente/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -47,8 +47,7 @@ export default function FormCadastroClient() {
         setError("Senhas não coincidem!") //colocar setError('') no input de password dentro de onChange
         return
     }
-
-
+    
     //cria o request gravando os dados na API
     const bodyForm = {
       name: name,

@@ -16,9 +16,9 @@ const ResumoPerfil: React.FC = () => {
     const typeUser = localStorage.getItem('typeUser');
     let url = ''
     if(typeUser === 'cliente') {
-         url = `http://localhost:5000/cliente/${userId}`
+         url = `https://needdrone.onrender.com/cliente/${userId}`
     }else {
-         url = `http://localhost:5000/piloto/${userId}`
+         url = `https://needdrone.onrender.com/piloto/${userId}`
     }
 
     const  fetchData = async ()=>{

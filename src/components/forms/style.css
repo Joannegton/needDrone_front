@@ -195,23 +195,8 @@ a:hover{
   }
   
 
-/* Adicione a cor amarela para estrelas selecionadas */
-.selected {
-    color: rebeccapurple;
-  }
+
   
-  /* Adicione cor amarela a todas as estrelas até a selecionada */
-  .estrelas-container {
-    display: flex;
-  }
-  
-  .estrela-container-1 .estrela,
-  .estrela-container-2 .estrela,
-  .estrela-container-3 .estrela,
-  .estrela-container-4 .estrela,
-  .estrela-container-5 .estrela {
-    color: black;
-  }
 
 @media only screen and (min-width: 768px) {
     form{

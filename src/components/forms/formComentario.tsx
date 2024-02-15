@@ -1,25 +1,53 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { set, useForm } from 'react-hook-form';
+import Star from '../cards/estrela';
 
 interface FormComentarioProps {
-  setEstrelas: Dispatch<SetStateAction<number>>;
+  pilotoId: string;
 }
 
-export const FormComentario: React.FC<FormComentarioProps> = ({ setEstrelas }) => {
+const items: number[] = [...(new Array(5).keys() as any)]; //estrelas de avaliação
+
+export const FormComentario: React.FC<FormComentarioProps> = ({pilotoId}) => {
   const { register, handleSubmit } = useForm();
   const [comentario, setComentario] = useState('');
-  const [estrelasLocal, setEstrelasLocal] = useState<number | null>(null);
+  const [estrela, setEstrela] = useState<number | null>(null);
 
-  const onSubmit = () => {
-    // Lógica para enviar dados para o servidor ou realizar outras ações
-    console.log();
+  const [activeIndex, setActiveIndex] = useState<number>();
+
+
+  useEffect( ()=>{
+    const fetchData = async()=>{
+      try {
+        const responde = fetch('')
+      } catch (error) {
+        
+      }
+    }
+    console.log(1)
+  })
+
+
+  const onClickStar = (index: number) => {
+    setActiveIndex((oldState) => (oldState === index ? undefined : index));
+    setEstrela(index + 1)
   };
 
-  const handleEstrelaClick = (value: number) => {
-    // Atualizar o estado das estrelas quando uma estrela é clicada
-    setEstrelasLocal(value);
-    setEstrelas(value);
+  const onSubmit = async() => {
+    const clienteId = localStorage.getItem('userId')
+    const bodyForm = {
+      pilotoId: pilotoId,
+      clienteId: clienteId,
+      avaliacao: estrela,
+      comentario: comentario
+    }
+    const response = await fetch('https://needdrone.onrender.com/comentario',{
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(bodyForm),
+    })
   };
+
 
   return (
     <>
@@ -29,31 +57,16 @@ export const FormComentario: React.FC<FormComentarioProps> = ({ setEstrelas }) =
         placeholder="Digite seu comentário"
         ></textarea>
 
-<div className="estrelas-container">
-          {[1, 2, 3, 4, 5].map((value) => (
-            <span key={value} className={`estrela-container-${value}`}>
-              <input
-                className='estrela'
-                type="radio"
-                id={`star${value}`}
-                value={value}
-                {...register('estrelas')}
-                checked={value === estrelasLocal}
-                onChange={() => handleEstrelaClick(value)}
-                hidden
-              />
-              <label
-                className={`estrela ${estrelasLocal && value <= estrelasLocal ? 'selected' : ''}`}
-                htmlFor={`star${value}`}
-                onClick={() => handleEstrelaClick(value)}
-                >
-                  &#9733;
-            </label>
-
-            </span>
+        <div className="estrelas-container">
+          {items.map((index) => (
+            <Star
+              onClick={() => onClickStar(index)}
+              key={`star_${index}`}
+              isActive={index <= activeIndex!}
+            />
           ))}
         </div>
-
+            {estrela}
 
         <button className='button_login' type="submit">Enviar</button>
       </form>

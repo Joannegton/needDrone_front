@@ -12,14 +12,14 @@ const Ordem = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/proposta/projeto/${projectId}`);
+                const response = await fetch(`https://needdrone.onrender.com/proposta/projeto/${projectId}`);
                 if (!response.ok) {
                     throw new Error(`Erro ao obter propostas do projeto: ${response.statusText}`);
                 }
                 const data = await response.json();
-                setPropostas(data);
-                setUserId(data.criadorProjeto)
-                console.log('ta indo')
+                setPropostas(data)
+                setUserId(data.IdCriadorProjeto)
+                console.log(data)
             } catch (error) {
                 console.error(error);
             }
@@ -28,7 +28,7 @@ const Ordem = () => {
     }, [projectId]);
 
     const idUser = localStorage.getItem('userId')
-    const isAuthorized = true //userId === idUser
+    const isAuthorized = userId === idUser
 
     return (
         <>

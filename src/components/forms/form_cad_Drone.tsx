@@ -19,7 +19,7 @@ export default function FormCadastroDrone() {
     
     const [error, setError] = useState(false)
     
-    const url = 'http://localhost:5000/drone/cadastro'
+    const url = 'https://needdrone.onrender.com/drone/cadastro'
 
     const onSubmit = async () => {
         const token = localStorage.getItem('token')

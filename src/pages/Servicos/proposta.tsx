@@ -6,9 +6,10 @@ const Proposta = ()=>{
     const userType = localStorage.getItem('typeUser')
     return(<>
     <Menu/>
-    {userType === 'piloto' ? <main className="fundo">
-        <FormProposta/>
-    </main> : <ForbiddenPage/>}
+    {userType === 'piloto' ? 
+        <main className="fundo">
+            <FormProposta/>
+        </main> : <ForbiddenPage/>}
     </>)
 }
 
