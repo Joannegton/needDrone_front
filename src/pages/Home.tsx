@@ -88,6 +88,7 @@ export default function Home() {
           <h2 className="titulo">O que nossos clientes estão dizendo</h2>
           <CardAvaliacaoSlider/>
       </div>
+      
       <div className="home-container">
         <h1 className="titulo2">Está pronto para encontrar o piloto ideal para seu evento?</h1>
         <button className="button_login" style={{backgroundColor: '#4FA4D1', border: 'none', margin:'auto'}}  onClick={()=>{navigate('/projeto/cadastro')}}>Publicar Projeto</button>

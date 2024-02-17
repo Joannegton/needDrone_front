@@ -49,9 +49,9 @@ const CardAvaliacaoSlider = () => {
      {conteudo.map((content, index) => (
         <CardAvaliacao
           key={index}
-          nome={content.nome}
-          foto={content.foto}
-          avaliacao={content.estrelas}
+          nome={content.nomeCliente}
+          foto={content.fotoCliente}
+          avaliacao={content.avaliacao}
           comentario={content.comentario}
           isVisible={index === currentIndex}
         />
@@ -60,9 +60,9 @@ const CardAvaliacaoSlider = () => {
       {width > 768 && conteudo.map((content, index) => (
         <CardAvaliacao
         key={index}
-        nome={content.nome}
-        foto={content.foto}
-        avaliacao={content.estrelas}
+        nome={content.nomeCliente}
+        foto={content.fotoCliente}
+        avaliacao={content.avaliacao}
         comentario={content.comentario}
         isVisible={index === currentIndex}
         />

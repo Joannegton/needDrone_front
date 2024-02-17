@@ -27,7 +27,7 @@ const CardAvaliacao: React.FC<CardAvaliacaoProps> = ({ nome, foto, avaliacao, co
       <div className="container">
         {items.map((index) => (
           <Star
-            onClick={() => onClickStar(index)}
+            onClick={() => null}
             key={`star_${index}`}
             isActive={index <= activeIndex!}
           />

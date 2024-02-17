@@ -32,7 +32,6 @@ import EditarPerfilPiloto from './pages/piloto/editPerfil';
 import EditProjeto from './pages/clientes/editProjeto';
 import Proposta from './pages/Servicos/proposta';
 import Andamentoordem from './pages/Servicos/OrdemAndamento';
-import Maps from './components/maps/page';
 
 function App() {
   const token = localStorage.getItem('token')
@@ -69,7 +68,7 @@ function App() {
 
         <Route path='/privacidade' element={<Privacidade/>}/>
 
-        <Route path='/comentario' element={<Comentario/>}/>
+        <Route path='/comentario/:proposta_id' element={<Comentario/>}/>
         
       </Routes>
       

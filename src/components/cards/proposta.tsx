@@ -13,14 +13,14 @@ interface Piloto {
 
 interface Proposta {
   projectId: string
-    IdCriadorProjeto:string
-    enviadorProposta: string;
-    ofertaInicial: number;
-    ofertaFinal: number;
-    detalhesProposta: string;
-    droneId: string;
-    status: string
-    _id: string
+  IdCriadorProjeto:string
+  enviadorProposta: string;
+  ofertaInicial: number;
+  ofertaFinal: number;
+  detalhesProposta: string;
+  droneId: string;
+  status: string
+  _id: string
 }
 
 interface PropostaCardProps {
@@ -170,7 +170,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
             {proposta.status === 'concluido'? 
               <div className='flex'>
                 <SuccessForms texto={'Projeto finalizado com sucesso!'}/>
-                <Link className='link button_login' style={{fontSize: '1.1em'}} to={'/comentario'}>Avalie o piloto</Link>
+                <Link className='link button_login' style={{fontSize: '1.1em'}} to={`/comentario/${proposta._id}`}>Avalie o piloto</Link>
               </div>: null}
         </div>
       )}
