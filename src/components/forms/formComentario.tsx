@@ -41,7 +41,7 @@ export const FormComentario: React.FC<FormComentarioProps> = ({pilotoId}) => {
       avaliacao: estrela,
       comentario: comentario
     }
-    const response = await fetch('https://needdrone.onrender.com/comentario',{
+    const response = await fetch('http://localhost:5000/comentario',{
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(bodyForm),

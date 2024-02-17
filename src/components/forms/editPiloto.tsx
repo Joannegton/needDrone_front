@@ -48,7 +48,7 @@ export default function FormAtualizacaoPiloto(){
 
     const getFetchData =async () => {
         try {
-            const response = await fetch(`https://needdrone.onrender.com/piloto/${userId}`)
+            const response = await fetch(`http://localhost:5000/piloto/${userId}`)
             if (!response.ok) throw new Error('Network response was not ok')
             const data = await response.json()
             setName(data.name);
@@ -112,7 +112,7 @@ export default function FormAtualizacaoPiloto(){
             especializacao: especializaca
         }
         try {
-            const response = await fetch(`https://needdrone.onrender.com/piloto/atualizar/${userId}`, {
+            const response = await fetch(`http://localhost:5000/piloto/atualizar/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -9,7 +9,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroPiloto(){
-    const url = 'https://needdrone.onrender.com/piloto/cadastro';
+    const url = 'http://localhost:5000/piloto/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

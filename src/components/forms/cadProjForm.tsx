@@ -61,7 +61,7 @@ export default function FormCadProj() {
 
     useEffect(()=>{setLocalization(`${rua}. ${selectedCity} - ${selectedUf}`)}, [selectedCity])
 
-    const url = "https://needdrone.onrender.com/projeto"
+    const url = "http://localhost:5000/projeto"
     const onSubmit = async () => {
 
         const token = localStorage.getItem('token')

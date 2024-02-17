@@ -7,7 +7,7 @@ import SuccessForms from '../cards/successForms';
 
 
 export default function FormCadastroClient() {
-    const url = 'https://needdrone.onrender.com/cliente/cadastro';
+    const url = 'http://localhost:5000/cliente/cadastro';
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

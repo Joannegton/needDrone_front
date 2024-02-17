@@ -13,13 +13,14 @@ interface Piloto {
 
 interface Proposta {
   projectId: string
-  enviadorProposta: string;
-  ofertaInicial: number;
-  ofertaFinal: number;
-  detalhesProposta: string;
-  droneId: string;
-  status: string
-  _id: string
+    IdCriadorProjeto:string
+    enviadorProposta: string;
+    ofertaInicial: number;
+    ofertaFinal: number;
+    detalhesProposta: string;
+    droneId: string;
+    status: string
+    _id: string
 }
 
 interface PropostaCardProps {
@@ -38,7 +39,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://needdrone.onrender.com/piloto/${proposta.enviadorProposta}`);
+        const response = await fetch(`http://localhost:5000/piloto/${proposta.enviadorProposta}`);
         const data = await response.json();
         if (data) {
           setPiloto(data);
@@ -50,8 +51,8 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
       }
     };
 
-    fetchData(); // Chame a função fetchData diretamente dentro do useEffect
-  }, [proposta.enviadorProposta, proposta.status]); // Certifique-se de incluir proposta.enviadorProposta como dependência
+    fetchData();
+  }, [proposta.enviadorProposta, proposta.status])
 
   const aceptOrder = async () => {
     const token = localStorage.getItem('token');
@@ -62,7 +63,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -97,7 +98,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   
     try {
-      const response = await fetch(`https://needdrone.onrender.com/proposta/atualizar/${proposta._id}`, {
+      const response = await fetch(`http://localhost:5000/proposta/atualizar/${proposta._id}`, {
         method: "PUT",
         headers: {
           'Content-type': 'application/json',
@@ -131,16 +132,16 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
     }
   }, [proposta.status])
   
+  const userType = localStorage.getItem('typeUser')
+  const auth = userType === 'cliente'
 
   return (
     <div className="container">
-      <h2 className="titulo2">Propostas Recebidas</h2>
-      {piloto ? (
-        <>
-          <div className="proposta-card">
+      { (
+        <div className="proposta-card">
           <div className="proposta_infos">
             <div>
-              <p><strong>Proposta de:</strong> <Link to={`/piloto/perfil/${proposta.enviadorProposta}`}>{piloto.name}</Link></p>
+              <p><strong>Proposta de:</strong> <Link to={`/piloto/perfil/${proposta.enviadorProposta}`}>{piloto?.name}</Link></p>
               <p><strong>Valor:</strong> {proposta.ofertaFinal}</p>
               <p><strong>Detalhes da Proposta:</strong></p>
               <p className='textos'>{proposta.detalhesProposta}</p>
@@ -154,21 +155,20 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
             {error && <ErrosForms texto={'Erro ao aceitar/recusar proposta!'}/>}
             {success && <SuccessForms texto={'Projeto Aceito/Recusado com sucesso!'}/>}
             <div className={proposta.status === 'concluido' || proposta.status === 'cancelado' ? 'hidden' : "botoes"}>
-              <button className={proposta.status === '' ? 'button_login' : 'hidden'} 
-                      style={{backgroundColor: 'green', border: 'none'}} 
-                      onClick={aceptOrder}>Aceitar</button>
-              <button className={proposta.status === 'andamento' ? 'button_login' : 'hidden'} 
-                      style={{backgroundColor: 'red', border: 'none'}} 
-                      onClick={rejectOrder}>Recusar</button>
+              <div className={userType === 'cliente'? '': 'hidden'}>
+                <button className={proposta.status === '' ? 'button_login' : 'hidden'}
+                        style={{backgroundColor: 'green', border: 'none'}}
+                        onClick={aceptOrder}>Aceitar</button>
+                <button className={proposta.status === 'andamento' || proposta.status === '' ? 'button_login' : 'hidden'}
+                        style={{backgroundColor: 'red', border: 'none'}}
+                        onClick={rejectOrder}>Recusar</button>
+              </div>
               <button className='button_login' 
                       style={{border: 'none'}} 
                       onClick={() => navigate(`/andamentoordem/${proposta._id}`)}>Mensagem</button>
             </div>
             {proposta.status === 'concluido'? <SuccessForms texto={'Projeto finalizado com sucesso!'}/>: null}
         </div>
-        </>
-      ) : (
-        <h2 className='titulo3'>Carregando Propostas...</h2>
       )}
     </div>
   );
