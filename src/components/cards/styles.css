@@ -126,7 +126,9 @@ display: none;
 .proposta_infos{
 display: flex;
 align-items: center;}
-
+.proposta_infos div{
+    width: 350px;
+}
 .proposta_infos p{
     margin: 5px;
 }
