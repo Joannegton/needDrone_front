@@ -144,7 +144,7 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
               <p><strong>Proposta de:</strong> <Link to={`/piloto/perfil/${proposta.enviadorProposta}`}>{piloto?.name}</Link></p>
               <p><strong>Valor:</strong> {proposta.ofertaFinal}</p>
               <p><strong>Detalhes da Proposta:</strong></p>
-              <p className='textos'>{proposta.detalhesProposta}</p>
+              <p className='textos detalhetext'>{proposta.detalhesProposta}</p>
             </div>
             <img src={proposta.status === 'cancelado' ? canceled : accepted} 
                 className={proposta.status !== ''  ? '' : 'hidden'} 
@@ -167,7 +167,11 @@ const PropostaCard: React.FC<PropostaCardProps> = ({ proposta }) => {
                       style={{border: 'none'}} 
                       onClick={() => navigate(`/andamentoordem/${proposta._id}`)}>Mensagem</button>
             </div>
-            {proposta.status === 'concluido'? <SuccessForms texto={'Projeto finalizado com sucesso!'}/>: null}
+            {proposta.status === 'concluido'? 
+              <div className='flex'>
+                <SuccessForms texto={'Projeto finalizado com sucesso!'}/>
+                <Link className='link button_login' style={{fontSize: '1.1em'}} to={'/comentario'}>Avalie o piloto</Link>
+              </div>: null}
         </div>
       )}
     </div>

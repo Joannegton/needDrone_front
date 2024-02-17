@@ -50,7 +50,7 @@ const Ordem = () => {
             <main className="fundo">
                 <OrdemComponent />
                 {isAuthorized && 
-                <div className="proposta-container">
+                <div className="container">
                     <h1 className="titulo2">Propostas Recebidas</h1>
                     {userType === 'cliente'?
                         propostas.map((proposta) => (

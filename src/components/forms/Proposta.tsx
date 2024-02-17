@@ -17,7 +17,7 @@ interface PropostaForm {
 }
 
 const FormProposta: React.FC = () => {
-  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<PropostaForm>();
+  const { register, handleSubmit, watch, setValue,reset, formState: { errors } } = useForm<PropostaForm>();
   const [success, setSuccess] = useState<boolean>(false);
   const [title, setTitle] = useState<string>('');
   const { projectId } = useParams<{ projectId: string }>();
@@ -89,7 +89,8 @@ const FormProposta: React.FC = () => {
 
       if (response.ok) {
         setSuccess(true);
-        setTimeout(() => setSuccess(false), 3000);
+        setTimeout(() => setSuccess(false), 2000);
+        reset()
       } else {
         console.log(data)
         alert("Erro no servidor, tente novamente mais tarde!");

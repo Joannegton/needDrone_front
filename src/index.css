@@ -56,6 +56,12 @@
   background-color: aliceblue;
 }
 
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+}
 
 /*/page*/
 .sombra-banner{
