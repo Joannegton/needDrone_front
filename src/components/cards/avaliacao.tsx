@@ -1,40 +1,35 @@
-import { useState } from 'react';
+import React from 'react';
 import Star from './estrela';
-import './styles.css'; // Certifique-se de ajustar o caminho correto
+import './styles.css'; // Ajuste o caminho conforme necessário
 
 interface CardAvaliacaoProps {
   nome: string;
   foto: string;
-  avaliacao: number;
+  avaliacao: number; // Número de estrelas ativas
   comentario: string;
   isVisible: boolean;
 }
-const items: number[] = [...(new Array(5).keys() as any)];
 
+// Supondo que seu componente Star aceite uma prop isActive para controle de estado ativo/desativo
 const CardAvaliacao: React.FC<CardAvaliacaoProps> = ({ nome, foto, avaliacao, comentario, isVisible }) => {
-  const [activeIndex, setActiveIndex] = useState<number>();
+  // Não precisa de useState aqui, pois a avaliação não muda neste componente
+  const totalEstrelas = 5; // Total de estrelas a serem exibidas
 
-  const onClickStar = (index: number) => {
-    setActiveIndex((oldState) => (oldState === index ? undefined : index));
-  };
-  
   return (
     <div className={`review-card ${isVisible ? 'visible' : 'hidden'}`}>
-      <img src={foto} alt={nome} />
+      <img src={foto} alt={nome} className="review-avatar" />
       <h3>{nome}</h3>
-      <p className="stars">{avaliacao}</p>
-      <p>{comentario}</p>
-      <div className="container">
-        {items.map((index) => (
+      <div className="estrelas-container">
+        {[...Array(totalEstrelas)].map((_, index) => (
           <Star
-            onClick={() => null}
             key={`star_${index}`}
-            isActive={index <= activeIndex!}
-          />
-      ))}
-    </div>
+            isActive={index < avaliacao} // Estrela ativa se o índice for menor que a avaliação
+            onClick={()=>{}}/>
+        ))}
+      </div>
+      <p>{comentario}</p>
     </div>
   );
-}
+};
 
 export default CardAvaliacao;

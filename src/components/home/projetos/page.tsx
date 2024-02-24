@@ -39,7 +39,8 @@ const Projetos = ()=>{
             const request = await fetch(`http://localhost:5000/projeto/`)
             const data: IProjeto[] = await request.json() 
             const userProjetos = data.filter(projeto => projeto.userId === id)
-            setContent(userProjetos)    
+            setContent(userProjetos) 
+            console.log(userProjetos)   
         } catch (error) {
             console.log("Deu ruim:", error)
         }
@@ -50,7 +51,6 @@ const Projetos = ()=>{
         if (status === 'Ativo') return 'green';
         if (status === 'Manutencao') return 'orange';
         if (status === 'Desativado') return 'red';
-        return 'black';
       };
 
  return(

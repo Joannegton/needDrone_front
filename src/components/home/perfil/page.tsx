@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 interface IResumoPerfil{
     name: string
     foto: string
+    avaliacao: number
 }
 
 
