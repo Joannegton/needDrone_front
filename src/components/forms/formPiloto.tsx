@@ -34,7 +34,6 @@ export default function FormCadastroPiloto(){
             return
         }
         
-
         // Envviando os dados para a API
         const bodyForm ={
             name: name,

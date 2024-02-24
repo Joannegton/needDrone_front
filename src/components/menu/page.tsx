@@ -83,7 +83,7 @@ export default function Menu() {
                 <Link className='link' to={'/drone/cadastro'}>Cadastrar drone</Link>
               </li>
               <li>
-                <Link className='link' to={`/dashboard/${userId}`}>Dashboard cliente</Link>
+                <Link className='link' to={`/dashboard/${userId}`}>Dashboard</Link>
               </li>
             </ul>
            

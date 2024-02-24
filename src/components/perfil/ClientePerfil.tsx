@@ -1,4 +1,3 @@
-import perfil from '../../assets/_8d2c28f8-d357-4e30-85c9-19019c88e6bf.jpg'
 import {useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import './style.css'
@@ -15,7 +14,7 @@ export default function ClientePerfil(){
     const [cep, setCep] = useState('')
     const [foto, setFoto] = useState('')
     const [biografia, setBiografia] = useState('')
-    const [avaliacao, setAvaliacao] = useState(5)
+    //const [avaliacao, setAvaliacao] = useState(5)
     const {id} = useParams()
 
     const fetchData = async () => {

@@ -7,7 +7,7 @@ export default function PerfilPiloto(){
 
 
     return(<>
-            <Menu/>
+        <Menu/>
         <main className='fundo'>
             <PilotoPerfil/>
         </main>

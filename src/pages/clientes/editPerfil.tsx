@@ -9,12 +9,12 @@ export default function AtualizacaoClient() {
     const isAuthorized = userId === id
     return (
       <>
-            {isAuthorized ? (
+            {isAuthorized ? (<>
+                <Menu />
                 <main>
-                    <Menu />
                     <FormAtualizacaoClient />a
                 </main>
-            ) : (
+                </>) : (
                 <ForbiddenPage />
             )}
         </>

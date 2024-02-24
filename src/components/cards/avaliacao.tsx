@@ -10,10 +10,9 @@ interface CardAvaliacaoProps {
   isVisible: boolean;
 }
 
-// Supondo que seu componente Star aceite uma prop isActive para controle de estado ativo/desativo
+// Supondo que o componente Star aceite uma prop isActive para controle de estado ativo/desativo
 const CardAvaliacao: React.FC<CardAvaliacaoProps> = ({ nome, foto, avaliacao, comentario, isVisible }) => {
-  // Não precisa de useState aqui, pois a avaliação não muda neste componente
-  const totalEstrelas = 5; // Total de estrelas a serem exibidas
+  const totalEstrelas = 5;
 
   return (
     <div className={`review-card ${isVisible ? 'visible' : 'hidden'}`}>

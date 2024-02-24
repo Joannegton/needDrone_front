@@ -20,9 +20,9 @@ const Registrar: React.FC = () => {
         }
     };
     
-    return(
+    return(<>
+        <Menu/>
         <main>
-            <Menu/>
             <section className="containerCadastro">
                 <h1 className="titulo">Criar uma conta</h1>
                 <p>Seja bem-vindo à Need a Drone!</p> <p>Diga-nos o que você está procurando.</p>
@@ -57,7 +57,7 @@ const Registrar: React.FC = () => {
                 
             </section>
         </main>
-    );
+        </>);
 }
 
 export default Registrar;

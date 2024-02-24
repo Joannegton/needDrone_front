@@ -4,13 +4,13 @@ import OrdemServicoComponent from "../../components/servicos/ordemServico";
 
 const OrdemsServico = () =>{
 
-    return(
+    return(<>
+        <Menu/>
         <main>
-            <Menu/>
             <OrdemServicoComponent/>
         </main>
            
-    )
+        </>)
 }
 
 export default OrdemsServico;

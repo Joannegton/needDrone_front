@@ -10,12 +10,12 @@ export default function EditarPerfilPiloto(){
 
     return(
         <>
-            {isAuthorized ? (
+            {isAuthorized ? (<>
+                <Menu />
                 <main>
-                    <Menu />
                     <FormAtualizacaoPiloto />a
                 </main>
-            ) : (
+                </> ) : (
                 <ForbiddenPage />
             )}
         </>

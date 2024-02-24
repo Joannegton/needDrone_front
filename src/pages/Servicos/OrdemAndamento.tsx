@@ -5,14 +5,14 @@ import AndamentoordemComponent from "../../components/servicos/ordemAndamentoCom
 
 const Andamentoordem = () =>{
 
-    return(
+    return(<>
+        <Menu/>
         <main>
-            <Menu/>
             <AndamentoordemComponent/>
             <Chat/>
         </main>
            
-    )
+        </>)
 }
 
 export default Andamentoordem;

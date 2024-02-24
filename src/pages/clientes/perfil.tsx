@@ -4,11 +4,11 @@ import ClientePerfil from '../../components/perfil/ClientePerfil'
 
 export default function PerfilCliente(){
 
-    return(
+    return(<>
+        <Menu/>
         <main>
-            <Menu/>
             <ClientePerfil/>
         </main>
 
-    )
+        </> )
 }

@@ -2,7 +2,6 @@ import './style.css'
 import { useForm } from 'react-hook-form';
 import { useEffect, useState, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ErrosForms from '../cards/erroForms';
 import SuccessForms from '../cards/successForms';
 import DropZone from '../uploadImage/app';
 
@@ -35,7 +34,6 @@ export default function FormAtualizacaoPiloto(){
     const [selectedUf, setSelectedUf] = useState("0");
     const [selectedCity, setSelectedCity] = useState("0");
 
-    const [error, setError] = useState('')
     const [success, setSuccess] = useState(false);
     const [emailExists, setEmailExists] = useState(false)
     const [render, setRender] = useState(false)

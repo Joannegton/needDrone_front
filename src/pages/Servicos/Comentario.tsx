@@ -44,9 +44,9 @@ const Comentario = () =>{
         fetchData();
         fetchDataDrone()
     }, [proposta_id]);
-    return(
+    return(<>
+        <Menu/>
         <main>
-            <Menu/>
             <div className="container">
                 <h2 className="titulo2">{title}</h2><br />
                 <p><strong>Nome do Piloto: </strong>{userName}</p>
@@ -55,7 +55,7 @@ const Comentario = () =>{
             </div>
             <FormComentario pilotoId={pilotoId} />
         </main>
-    )
+    </>)
 }
 
 export default Comentario

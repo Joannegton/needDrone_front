@@ -8,7 +8,7 @@ function Maps({ address }) {
   // Função para obter coordenadas a partir de um endereço
   async function getCoordinatesForAddress(address) {
     // Acesso à variável de ambiente diretamente de process.env
-    const apiKey = 'AIzaSyD45OqjoZmCs_6UOXhbgm3Bf5g60puoHK8';
+    const apiKey = process.env.REACT_APP_API_GOOGLE_MAPS;
     const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`);
     const data = await response.json();
     
@@ -26,7 +26,7 @@ function Maps({ address }) {
   }, [address]);
 
   return (
-    <APIProvider apiKey={'AIzaSyD45OqjoZmCs_6UOXhbgm3Bf5g60puoHK8'}>
+    <APIProvider apiKey={process.env.REACT_APP_API_GOOGLE_MAPS}>
       <Map center={position} zoom={11} style={{ width: '100%', height: '100px' }}>
         <Marker position={position} />
       </Map>
